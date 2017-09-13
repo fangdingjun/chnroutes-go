@@ -10,11 +10,11 @@ usage
    $GOPATH/bin/chnroutes-go
 
  
-  after finished, there are 3 files generated
+  after finished, there are 3 files generated on current directory
 
 
   ipnet_cn.txt:  
-      the ip range, per line look like this
+      the ip range file, per line look like this
             192.168.1.0/24
 
   routes_add.sh:
