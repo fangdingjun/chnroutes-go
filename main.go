@@ -111,8 +111,8 @@ func writeRouteScriptLinux(ipnet []*net.IPNet) error {
 	fmt.Fprintf(fp, `#!/bin/bash
 # route has two formats
 #   1.2.3.4 dev ppp0  src 10.150.16.112
-#   1.2.3.4 via 192.168.1.1 dev eth0 src 192.168.1.160
-gw=$(ip route get 1.2.3.4 | awk '/1.2.3.4/{gsub("1.2.3.4", "");print}')
+#   1.2.3.4 via 192.168.1.1 dev eth0 src 192.168.1.160 uid 1000
+gw=$(ip route get 1.2.3.4 | awk '/1.2.3.4/{gsub("1.2.3.4", "");gsub("src.*", "");print}')
 ip -batch - <<EOF
 `)
 
